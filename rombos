@@ -1,0 +1,56 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int numero = 0;
+	int asterisco = 0;
+	int espacios = 0;
+	int impar=1;
+
+	cout << "Digita un numero impar, entre 3 y 21:  " << endl;
+	cin >> numero;
+
+	do{
+		if ((numero<=21)and(numero>=3)) {
+			if (numero % 2 == 0) {
+				cout << "El numero es par, ingresa un numero impar:  "<< endl;
+				cin >> numero;
+			}
+		}
+		else {
+			cout << "El numero no esta entre 3 y 21, vuelve a elegir un numero impar, entre 3 y 21: " << endl;
+			cin >> numero;
+		}
+		
+		
+	} while (impar !=0);
+
+	
+	//asterisco parte superior
+	for (int i = 0; i <= numero; i++) {
+		for (espacios = i; espacios <= (numero - 1); espacios++) {
+			cout << " ";
+		}
+		for (asterisco = 1; asterisco <= (2*i)-1; asterisco++) {
+			cout << "*";
+		}
+		cout << endl;
+		
+	}
+	//asterisco parte inferior 
+	for (int i = (numero - 1); i >= 1; i--) {
+		for (espacios = i; espacios <= numero - 1; espacios++) {
+			cout << " ";
+		}
+		for (asterisco = 1; asterisco <= (2 * i) - 1; asterisco++) {
+			cout << "*";
+		}
+		cout << endl;
+		
+	}
+	
+	
+	return 0;
+}
